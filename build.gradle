@@ -1,0 +1,41 @@
+apply {
+    plugin 'java'
+    plugin 'idea'
+    plugin 'jacoco'
+    plugin 'groovy'
+}
+
+jacoco {
+		toolVersion = "0.7.6.201602180812"
+}
+
+archivesBaseName = 'java11_features'
+
+[compileJava, compileTestJava]*.options*.encoding = "UTF-8"
+
+
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+}
+
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+
+}
+
+
+dependencies {
+  
+
+}
+
+
+
+
+
+
+
